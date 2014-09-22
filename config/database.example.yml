@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: <YOUR_DATABASE_NAME>_development
+
+test:
+  <<: *default
+  database: <YOUR_DATABASE_NAME>_test
+
+production:
+  <<: *default
+  database: <YOUR_DATABASE_NAME>_production
+  username: <USERNAME>
+  password: <%= ENV['COMIC_BOOK_APP_DATABASE_PASSWORD'] %>
