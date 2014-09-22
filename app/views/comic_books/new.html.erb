@@ -1,0 +1,35 @@
+<%= form_for @comic_book do |f| %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :issue %>
+    <%= f.text_field :issue %>
+  </div>
+  <div>
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </div>
+  <div>
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher%>
+  </div>
+  <div>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+    <%= f.label :artist %>
+    <%= f.text_field :artist %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.submit 'Create Comic Book' %>
+  </div>
+
+<% end %>
