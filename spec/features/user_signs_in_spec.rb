@@ -2,9 +2,9 @@ require 'rails_helper'
 
 feature 'authenticated user may sign in', %Q(
 
-As an unauthenticated user
-I want to sign in
-So that I can post items and review them
+  As an unauthenticated user
+  I want to sign in
+  So that I can post items and review them
 
 ) do
 

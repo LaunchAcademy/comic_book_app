@@ -5,6 +5,7 @@ feature 'user logs out', %Q(
   As an authenticated user
   I want to sign out
   So that no one else can post items or reviews on my behalf
+
 ) do
 
   scenario 'user logs out' do
@@ -16,7 +17,6 @@ feature 'user logs out', %Q(
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign in'
-
 
     click_link 'Sign out'
 

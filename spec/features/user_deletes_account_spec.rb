@@ -22,9 +22,6 @@ feature 'user can delete account', %Q(
     click_button 'Annihilate it!'
 
     expect(page).to have_content('Your account was destroyed')
-
-
   end
-
 end
 
