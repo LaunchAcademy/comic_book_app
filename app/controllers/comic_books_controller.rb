@@ -15,7 +15,7 @@ class ComicBooksController < ApplicationController
       redirect_to @comic_book, notice: 'Successfully created!'
     else
       render :new
-      flash[:notice]='Could not save.'
+      flash[:notice] = 'Could not save.'
     end
   end
 
@@ -23,18 +23,11 @@ class ComicBooksController < ApplicationController
     @comic_book = ComicBook.find(params[:id])
   end
 
-
-
-
   private
 
-  def comic_book_params
-    params.require(:comic_book).permit(:title, :issue, :year, :publisher, :author, :artist, :description)
-  end
-
-
-
-
-
+    def comic_book_params
+      params.require(:comic_book).permit(:title, :issue, :year,
+        :publisher, :author, :artist, :description)
+    end
 
 end # of class
