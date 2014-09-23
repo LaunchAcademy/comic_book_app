@@ -1,4 +1,6 @@
 class ComicBooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
 
   def index
     @comic_books = ComicBook.all
@@ -30,4 +32,10 @@ class ComicBooksController < ApplicationController
         :publisher, :author, :artist, :description)
     end
 
+  def authenticate_user!
+    unless user_signed_in?
+      flash[:notice]='You need to sign in if you want to add a comic.'
+      redirect_to new_user_session_path
+    end
+  end
 end # of class
