@@ -11,7 +11,7 @@ feature 'user can add comic book', %Q(
   let(:user) { FactoryGirl.create(:user) }
 
   scenario 'user adds comic book' do
-    login_as(user)
+    sign_in(user)
     comic = FactoryGirl.build(:comic_book)
 
     visit new_comic_book_path
