@@ -6,6 +6,6 @@ FactoryGirl.define do
     publisher 'Marvel Comics'
     author 'Bobby P.'
     artist 'Sath M.'
-    description 'This is the BEST COMIC INM THE WORLD! '
+    description 'This is the BEST COMIC IN THE WORLD! '
   end
 end
