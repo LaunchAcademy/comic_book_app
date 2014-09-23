@@ -10,14 +10,9 @@ feature 'user updates profile', %Q(
 
   scenario 'user changes password' do
     user = FactoryGirl.create(:user)
+    sign_in(user)
 
     visit root_path
-    click_link 'Sign in'
-
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign in'
-
     click_link 'Edit profile'
     fill_in 'Current password', with: user.password
     fill_in 'Password', with: 'new_password'
