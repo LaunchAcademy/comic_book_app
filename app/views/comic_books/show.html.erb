@@ -1,1 +1,21 @@
 <h1><%= @comic_book.title %> </h1>
+
+
+<p>
+  <%= @comic_book.issue %>
+</p>
+<p>
+  <%= @comic_book.year %>
+</p>
+<p>
+  <%= @comic_book.author %>
+</p>
+<p>
+  <%= @comic_book.artist %>
+</p>
+<p>
+  <%= @comic_book.description %>
+</p>
+<p>
+  <%= link_to 'Edit Comic', edit_comic_book_path %>
+</p>
