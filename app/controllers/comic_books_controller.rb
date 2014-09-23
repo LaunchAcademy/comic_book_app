@@ -40,12 +40,12 @@ class ComicBooksController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @comic_book = ComicBook.find(params{:id})
-  #   @comic_book.destroy
-  #   flash[:notice]='Comic has been destroyed'
-  #   redirect_to comic_books_path
-  # end
+  def destroy
+    @comic_book = ComicBook.find(params[:id])
+    @comic_book.destroy
+    flash[:notice] = 'This comic has been removed.'
+    redirect_to comic_books_path
+  end
 
 
   private

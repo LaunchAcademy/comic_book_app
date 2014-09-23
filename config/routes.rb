@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :comic_books, only: [:index, :new, :create, :show, :edit, :update]
+  resources :comic_books, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   root 'comic_books#index'
   # The priority is based upon order of creation: first created -> highest priority.
