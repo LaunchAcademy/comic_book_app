@@ -1,4 +1,6 @@
 class ComicBooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
 
   def index
     @comic_books = ComicBook.all
@@ -14,14 +16,37 @@ class ComicBooksController < ApplicationController
     if @comic_book.save
       redirect_to @comic_book, notice: 'Successfully created!'
     else
-      render :new
       flash[:notice] = 'Could not save.'
+      render :new
     end
-  end
+  end # of create
 
   def show
     @comic_book = ComicBook.find(params[:id])
   end
+
+  def edit
+    @comic_book = ComicBook.find(params[:id])
+  end
+
+  def update
+    @comic_book = ComicBook.find(params[:id])
+
+    if @comic_book.update(comic_book_params)
+      redirect_to @comic_book, notice: 'Successfully updated!'
+    else
+      flash[:notice] = 'Could not update. Ask Batman. '
+      render :new
+    end
+  end
+
+  def destroy
+    @comic_book = ComicBook.find(params[:id])
+    @comic_book.destroy
+    flash[:notice] = 'This comic has been removed.'
+    redirect_to comic_books_path
+  end
+
 
   private
 
@@ -30,4 +55,10 @@ class ComicBooksController < ApplicationController
         :publisher, :author, :artist, :description)
     end
 
+  def authenticate_user!
+    unless user_signed_in?
+      flash[:notice]='You need to sign in if you want to add a comic.'
+      redirect_to new_user_session_path
+    end
+  end
 end # of class

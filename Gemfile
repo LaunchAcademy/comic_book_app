@@ -18,4 +18,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'valid_attribute'
+  gem 'guard'
 end
