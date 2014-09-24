@@ -4,6 +4,6 @@ class ComicBook < ActiveRecord::Base
   validates :title, presence: true
 
   def self.search(query)
-    where("title like ?", "%#{query}%")
+    where("title ilike %?%", query)
   end
 end
