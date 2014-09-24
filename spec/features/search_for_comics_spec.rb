@@ -13,8 +13,8 @@ feature 'User searches for a comic.', %Q(
 
     visit root_path
 
-    fill_in 'Search', with: comic.title
-    click_button 'Search comics'
+    fill_in 'search', with: comic.title
+    click_button 'Search'
     expect(page).to have_content(comic.title)
 
   end
