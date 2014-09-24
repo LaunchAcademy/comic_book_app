@@ -21,9 +21,9 @@ feature 'user tries to add a review to a comic', %Q(
       fill_in 'Description', with: comic.description
       click_button 'Create Comic Book'
       fill_in 'Body', with: 'sample review'
-      fill_in 'Rating', with: 1
+      fill_in 'Rating', with: '1'
+      click_button 'Create Rating'
 
-      save_and_open_page
-      click_link 'Create Review'
+      expect(page).to have_content('Review Added')
   end
 end # of test
