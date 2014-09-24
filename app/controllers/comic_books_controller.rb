@@ -63,7 +63,7 @@ class ComicBooksController < ApplicationController
 
   def authenticate_user!
     unless user_signed_in?
-      flash[:notice]='You need to sign in if you want to add a comic.'
+      flash[:notice] = 'You need to sign in if you want to add a comic.'
       redirect_to new_user_session_path
     end
   end # of method

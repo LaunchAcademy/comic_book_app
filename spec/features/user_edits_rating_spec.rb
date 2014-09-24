@@ -21,10 +21,10 @@ feature 'user tries to edit rating', %Q(
       fill_in 'Description', with: comic.description
       click_button 'Create Comic Book'
       fill_in 'Body', with: 'sample review'
-      fill_in 'Rating', with: '1'
+      select(3, from: 'Rating')
       click_button 'Create Rating'
       click_link 'Edit Rating'
-      fill_in 'Rating', with: '2'
+      select(5, from: 'Rating')
 
       expect(page).to have_content('Review Updated')
   end

@@ -21,16 +21,27 @@
   <%= link_to 'Delete Comic', comic_book_path(@comic_book), method: :delete %>
 </p>
 
+<div id='comic_book_ratings'>
+  <ul>
+    <% binding.pry  %>
+    <% if @ratings.any? do %>
+        <% @ratings.each do |rating| %>
+          <li><%= rating.body %></li>
+          <li><%= rating.rating  %></li>
+      <% end %>
+    <% end  %>
+  </ul>
+</div>
 
 <h2>Add a Review:</h2>
 <%= form_for([@comic_book, @comic_book.ratings.build]) do |f| %>
   <p>
     <%= f.label :body %><br>
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </p>
   <p>
     <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
+    <%= f.select(:rating, 1..10) %>
   </p>
   <p>
     <%= f.submit %>
