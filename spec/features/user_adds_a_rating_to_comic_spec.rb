@@ -20,6 +20,10 @@ feature 'user tries to add a review to a comic', %Q(
       fill_in 'Artist', with: comic.artist
       fill_in 'Description', with: comic.description
       click_button 'Create Comic Book'
-      click_link 'Add Review'
+      fill_in 'Body', with: 'sample review'
+      fill_in 'Rating', with: 1
+
+      save_and_open_page
+      click_link 'Create Review'
   end
 end # of test

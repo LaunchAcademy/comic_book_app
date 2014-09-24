@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :comic_books do
-    resources :ratings
+    resources :ratings, only: [:create, :update]
   end
 
   root 'comic_books#index'
