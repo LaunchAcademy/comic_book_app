@@ -2,7 +2,7 @@
 
 <ul>
   <% @comic_books.each do |comic| %>
-    <li class="comic_book"><%= comic.title %></li>
+    <li class="comic_book"><%= link_to comic.title, comic_book_path(comic) %></li>
   <% end %>
 </ul>
 
