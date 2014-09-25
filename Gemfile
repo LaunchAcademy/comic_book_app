@@ -9,6 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'kaminari'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'capybara'
