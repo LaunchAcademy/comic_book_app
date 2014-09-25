@@ -1,3 +1,5 @@
+<!--/Comic Book Info/-->
+
 <h1><%= @comic_book.title %> </h1>
 <p>
   <%= @comic_book.issue %>
@@ -21,18 +23,16 @@
   <%= link_to 'Delete Comic', comic_book_path(@comic_book), method: :delete %>
 </p>
 
-<div id='comic_book_ratings'>
-  <ul>
-    <% binding.pry  %>
-    <% if @ratings.any? do %>
-        <% @ratings.each do |rating| %>
-          <li><%= rating.body %></li>
-          <li><%= rating.rating  %></li>
-      <% end %>
-    <% end  %>
-  </ul>
-</div>
+<!-- /Show Ratings/ -->
 
+<ul>
+  <% @ratings.each do |rating|  %>
+    <li><%= rating.body %></li>
+    <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
+  <% end %>
+</ul>
+
+<!--/Add A Rating & Review Section/-->
 <h2>Add a Review:</h2>
 <%= form_for([@comic_book, @comic_book.ratings.build]) do |f| %>
   <p>
