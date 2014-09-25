@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Bangers);
+* {
+  font-family: 'Bangers', cursive;
+  }
+body {
+  background: #2B3B44;
+}
+.main-container {
+  max-width: 90%;
+  height: 100%;
+  background: #17C0EF;
+}
+
+/* COMIC BOOK SHOW PAGE */
+
+#comic-description {
+  background: white;
+  max-width: 40%;
+  border-radius: 5px;
+}

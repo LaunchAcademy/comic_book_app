@@ -18,9 +18,14 @@ nav ul {
 
 nav ul li {
   padding: 10px;
+
 }
 
 .brand {
   order: -1;
   flex: 2;
+}
+
+a {
+  text-decoration: none;
 }
