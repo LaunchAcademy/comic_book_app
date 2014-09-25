@@ -18,3 +18,7 @@ body {
   max-width: 40%;
   border-radius: 5px;
 }
+
+#rating_body {
+  border-radius: 5px;
+}
