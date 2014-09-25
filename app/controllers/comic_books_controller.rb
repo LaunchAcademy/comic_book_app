@@ -66,7 +66,7 @@ class ComicBooksController < ApplicationController
 
     def comic_book_params
       params.require(:comic_book).permit(:title, :issue, :year,
-        :publisher, :author, :artist, :description)
+        :publisher, :author, :artist, :description, :cover)
     end
 
   def authenticate_user!
