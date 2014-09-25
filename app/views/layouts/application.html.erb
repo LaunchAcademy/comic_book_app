@@ -20,7 +20,7 @@
         <li><%= link_to "Sign in", new_user_session_path %></li>
       <% end %>
       <li>
-        <%= form_tag(comic_books_path, :method => "get", id: "search-form") do %>
+        <%= form_tag(search_comic_books_path, id: "search-form", method: :get) do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search comics" %>
           <%= submit_tag "Search", :name => nil %>
         <% end %>

@@ -3,14 +3,15 @@ class ComicBooksController < ApplicationController
 
 
   def index
-    if params[:search]
-      @comic_books = ComicBook.search(params[:search]).page(params[:page]).per(10)
-      if @comic_books.empty?
-        flash[:notice] = 'Could not find thy query'
-      end
-    else
-      @comic_books = ComicBook.page(params[:page]).per(10)
+    @comic_books = ComicBook.page(params[:page]).per(10)
+  end
+
+  def search
+    @comic_books = ComicBook.search(params[:search]).page(params[:page]).per(10)
+    if @comic_books.empty?
+      flash[:notice] = 'Could not find thy query'
     end
+    render :index
   end
 
   def new

@@ -16,6 +16,5 @@ feature 'User searches for a comic.', %Q(
     fill_in 'search', with: comic.title
     click_button 'Search'
     expect(page).to have_content(comic.title)
-
   end
 end
