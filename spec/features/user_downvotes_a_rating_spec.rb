@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-feature 'user tries to upvote a comic', %Q(
+feature 'user tries to downvote a comic rating', %Q(
 
   As a CBN
-  I want to be able to upvote or downvote ratings,
-  so that I can know which rating for the comic book is the most authorative review (and so that I can know who the biggest nerd is).
+  I want to be able to downvote ratings,
+  so that I can mock lesser nerds and their ignorant reviews.
 
 ) do
   let(:user) { FactoryGirl.create(:user) }
@@ -26,11 +26,11 @@ feature 'user tries to upvote a comic', %Q(
 
       ##### rating upvote ######
 
-      click_link 'Upvote'
+      click_link 'Downvote'
 
 
       ##########################
 
-      expect(page).to have_content('Upvote Successful')
+      expect(page).to have_content('Downvote Successful.')
   end
 end

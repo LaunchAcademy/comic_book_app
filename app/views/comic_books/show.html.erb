@@ -33,6 +33,8 @@
 <ul>
   <% @ratings.each do |rating|  %>
     <li><%= rating.user.email%>| Votes: <%= rating.total_score %>|<%= rating.body %></li>
+    <%= link_to 'Upvote', upvote_comic_book_rating_path(@comic_book, rating)  %>|
+    <%= link_to 'Downvote', downvote_comic_book_rating_path(@comic_book, rating)  %>|
     <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
   <% end %>
 </ul>
