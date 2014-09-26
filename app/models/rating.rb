@@ -10,7 +10,7 @@ class Rating < ActiveRecord::Base
   validates :comic_book_id, presence: true
 
   def total_score
-    votes.inject {|sum, vote| sum + vote.score }
+    votes.sum(:score)
   end
 
 end # of class
