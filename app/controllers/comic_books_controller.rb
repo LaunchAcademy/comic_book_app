@@ -23,6 +23,7 @@ class ComicBooksController < ApplicationController
 
     if @comic_book.save
       redirect_to @comic_book, notice: 'Successfully created!'
+      UserMailer.created_comic_email(current_user).deliver
     else
       flash[:notice] = 'Could not save.'
       render :new
