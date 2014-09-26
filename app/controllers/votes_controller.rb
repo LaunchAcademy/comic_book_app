@@ -1,9 +1,9 @@
 class VotesController < ApplicationController
 
   def upvote
-    @vote = Vote.new
-    @vote.user = current_user
-    @vote.rating = Rating.find(params[:id])
+    @vote = Vote.find_or_initialize_by(user_id: current_user.id, rating_id: params[:id])
+    # @vote.user = current_user
+    # @vote.rating = Rating.find(params[:id])
     @vote.score = 1
 
     if @vote.save
