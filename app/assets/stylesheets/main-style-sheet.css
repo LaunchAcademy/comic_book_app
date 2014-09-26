@@ -1,24 +1,95 @@
 @import url(http://fonts.googleapis.com/css?family=Bangers);
 * {
   font-family: 'Bangers', cursive;
-  }
+}
 body {
   background: #2B3B44;
 }
+
+
+
+/*NAV BAR*/
+
+nav {
+  background: #217FBE;
+  display: inline-block;
+  text-decoration: none;
+  min-height: 3%;
+  height: 45px;
+  margin-top: 0;
+}
+
+nav ul:nth-last-child(n+1) {
+  font-size: 2.1em;
+  text-align: center;
+}
+ nav ul li {
+   text-align: center;
+   display: inline-block;
+   padding-left: 30px;
+ }
+
+nav ul li a {
+  font-family: "Bangers";
+  margin: 0 0 -1em 0;
+  color: black;
+  text-shadow: -1px -1px yellow, 1px 1px orange,  2px 2px orange;
+  -webkit-transform: rotate(-10deg) skew(-10deg, 0);
+  -moz-transform: rotate(-10deg) skew(-10deg, 0);
+  -ms-transform: rotate(-10deg) skew(-10deg, 0);
+  -o-transform: rotate(-10deg) skew(-10deg, 0);
+  transform: rotate(-10deg) skew(-10deg, 0);
+  padding-bottom: 50px;
+  width: 90%;
+ }
+ nav ul li a:last-child {
+   font-size: .9em;
+  }
+nav li:last-child{
+  margin-left: 100px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/*Main Container*/
 .main-container {
-  max-width: 90%;
-  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
   background: #17C0EF;
+  height: 900px;
+  min-height: 90%;
+}
+/*COMIC BOOK SHOW PAGE*/
+
+.content-container {
+  margin: auto 0;
+  margin-left: 10px;
+  padding-left: 5%;
+  vertical-align: center;
 }
 
-/* COMIC BOOK SHOW PAGE */
+.comic-search {
+  background-color:#E43D1D;
+  font-size: 0.5em;
+  padding: 5px;
+}
 
-#comic-description {
-  background: white;
-  max-width: 40%;
+#search-form > input[type="submit"]:nth-child(3) {
   border-radius: 5px;
 }
 
-#rating_body {
-  border-radius: 5px;
+#search {
+  border-radius: 5px 5px 10px 5px ;
+}
+
+
+
+
+/*COMIC BOOK SHOW PAGE*/
+
+.cover-art img{
+  max-width: 250px;
+  max-height: 435px;
+  border: 2px solid black;
 }

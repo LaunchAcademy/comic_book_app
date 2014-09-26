@@ -1,54 +1,64 @@
 <!--/Comic Book Info/-->
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h1><%= @comic_book.title %> </h1>
+      <p class='comic-issue'>
+        Issue: <%= @comic_book.issue %>
+      </p>
+      <p>
+        Year: <%= @comic_book.year %>
+      </p>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="col-md-4 column">
+      <p CLASS='cover-art'>
+        <%= image_tag @comic_book.cover %>
+      </p>
+    </div>
+  <div class="col-md-8 column">
+    <p id='author'>
+      <%= @comic_book.author %>
+    </p>
+    <p>
+      Artist: <%= @comic_book.artist %>
+    </p>
+    <p id='comic-description'>
+      <%= @comic_book.description %>
+    </p>
+    <p>
+      <%= link_to 'Edit Comic', edit_comic_book_path %>
+    </p>
+    <p>
+      <%= link_to 'Delete Comic', comic_book_path(@comic_book), method: :delete %>
+    </p>
+  <!-- /Show Ratings/ -->
+    <ul>
+      <% @ratings.each do |rating|  %>
+        <li><%= rating.body %></li>
+        <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
+      <% end %>
+    </ul>
+  </div>
 
-<h1><%= @comic_book.title %> </h1>
-<p>
-  <%= @comic_book.issue %>
-</p>
-<p>
-  <%= @comic_book.year %>
-</p>
-
-<p>
-  <%= image_tag @comic_book.cover %>
-</p>
-
-<p id='author'>
-  <%= @comic_book.author %>
-</p>
-<p>
-  <%= @comic_book.artist %>
-</p>
-<p id='comic-description'>
-  <%= @comic_book.description %>
-</p>
-<p>
-  <%= link_to 'Edit Comic', edit_comic_book_path %>
-</p>
-<p>
-  <%= link_to 'Delete Comic', comic_book_path(@comic_book), method: :delete %>
-</p>
-
-<!-- /Show Ratings/ -->
-
-<ul>
-  <% @ratings.each do |rating|  %>
-    <li><%= rating.body %></li>
-    <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
-  <% end %>
-</ul>
-
-<!--/Add A Rating & Review Section/-->
-<h2>Add a Review:</h2>
-<%= form_for([@comic_book, @comic_book.ratings.build]) do |f| %>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.label :rating %><br>
-    <%= f.select(:rating, 1..10) %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+  <!--/Add A Rating & Review Section/-->
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <h2>Add a Review:</h2>
+      <%= form_for([@comic_book, @comic_book.ratings.build]) do |f| %>
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.label :rating %><br>
+        <%= f.select(:rating, 1..10) %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
