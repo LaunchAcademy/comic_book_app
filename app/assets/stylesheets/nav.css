@@ -1,7 +1,7 @@
 html, body {
   width: 100%;
   height: 100%;
-/*  background-image: url('comic-paper-bg.jpg');*/
+  background-image: url('comic-paper-bg.jpg');
 }
 
 nav {
@@ -20,7 +20,15 @@ nav ul li {
   padding: 10px;
 }
 
-.brand {
+.brand a {
   order: -1;
   flex: 2;
+}
+
+.brand img {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 30%;
+  height: 30%;
 }
