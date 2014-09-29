@@ -13,7 +13,7 @@ feature 'user can see only 10 comics on a page', %Q(
 
     visit comic_books_path
 
-    expect(page).to have_selector('.comic_book', count: 10)
+    expect(page).to have_selector('.comic-index-list', count: 10)
 
   end
 end
