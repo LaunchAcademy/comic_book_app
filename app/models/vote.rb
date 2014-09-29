@@ -6,4 +6,6 @@ class Vote < ActiveRecord::Base
   validates :rating_id, presence: true
 
   validates_uniqueness_of :rating, scope: :user
+
+  validates :score, numericality: { inclusion: { in: [-1,1] } }
 end
