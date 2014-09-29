@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'mailcatcher'
@@ -22,4 +23,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'guard'
+  gem 'dotenv-rails'
 end
