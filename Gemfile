@@ -12,6 +12,7 @@ gem 'kaminari'
 gem 'carrierwave'
 
 group :development, :test do
+  gem 'mailcatcher'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
