@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'capybara'

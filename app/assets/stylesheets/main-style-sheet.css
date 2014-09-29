@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Bangers);
+@import 'bootstrap';
 * {
   font-family: 'Bangers', cursive;
   }
@@ -7,14 +8,106 @@ body {
 }
 .main-container {
   max-width: 90%;
-  height: 100%;
-  background: #17C0EF;
+  background: #009DFF;
+  margin: 0 auto;
+  padding: 10px;
+  height: 800px;
+  max-height: 90%;
 }
 
-/* COMIC BOOK SHOW PAGE */
 
-#comic-description {
-  background: white;
-  max-width: 40%;
+.seperator1 {
+  border-bottom: 3px solid #30719B;
+}
+.seperator2 {
+  border-bottom: 3px solid #1C88CC;
+}
+/*NAVIGATION BAR*/
+header {
+  margin: 0 auto;
+}
+.nav-bar {
+  display: inline-block;
+  background-color: #2B3B44;
+  margin-bottom: 10px;
+}
+
+.nav-bar li {
+  font-size: 1.3em;
+  display: inline-block;
+  padding-right: 50px;
+  list-style: none;
+  text-shadow: -1px -1px yellow, 1px 1px orange,  2px 2px orange;
+}
+
+.nav-bar li:last-child {
+  padding-left: 200px;
+}
+
+.nav-bar li:first-child {
+  padding-left: 20px;
+}
+
+.nav-bar li a {
+  text-decoration: none;
+}
+
+.nav-bar li a:hover {
+  font-size: 1.1em;
+}
+.search-btn {
   border-radius: 5px;
+}
+
+.search-box {
+  border-radius: 5px;
+}
+/* COMIC BOOK INDEX PAGE */
+.comic-index-list {
+  display: inline-block;
+  list-style: none;
+  max-width: 80%;
+}
+
+.cover-view img {
+  max-width: 100px;
+}
+.comic-cover-art {
+  max-width: 50px;
+}
+
+.comic-book-title {
+  text-align: center;
+  font-size: 1em;
+}
+.comic-header {
+  font-size: 2.5em;
+  text-align:center;
+  font-family: "Bangers";
+  margin: 0 0 -1em 0;
+  text-shadow: -1px -1px yellow, 1px 1px orange,  2px 2px orange;
+  -webkit-transform: rotate(-10deg) skew(-10deg, 0);
+  -moz-transform: rotate(-10deg) skew(-10deg, 0);
+  -ms-transform: rotate(-10deg) skew(-10deg, 0);
+  -o-transform: rotate(-10deg) skew(-10deg, 0);
+  transform: rotate(-10deg) skew(-10deg, 0);
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.comic-book-title a{
+  text-decoration: none;
+}
+
+
+.bottom-options {
+  list-style:none;
+  padding: 10px;
+}
+
+.add-btn {
+  margin-top: 20px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 20px;
 }
