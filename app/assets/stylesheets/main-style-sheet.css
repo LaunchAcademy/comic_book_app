@@ -71,10 +71,12 @@ header {
 
 .cover-view img {
   max-width: 100px;
+  border-bottom: 2px solid black;
+  border-right: 1px solid black;
 }
-.comic-cover-art {
+/*.comic-cover-art {
   max-width: 50px;
-}
+}*/
 
 .comic-book-title {
   text-align: center;
@@ -110,4 +112,72 @@ header {
   text-decoration: none;
   border: 2px solid black;
   padding: 20px;
+}
+
+/*COMIC BOOK SHOW PAGE*/
+
+.show-cover {
+  float: left;
+}
+
+.comic-info {
+  height: 400px;
+  width: 500px;
+  float: left;
+}
+
+.comic-info li {
+  text-align: center;
+  list-style: none;
+}
+
+.show-cover ul li {
+  display: inline-block;
+  text-decoration: none;
+}
+.show-cover ul li a {
+text-decoration: none;
+}
+
+.show-cover {
+  text-align: center;
+}
+
+
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #059bff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65747d), to(#059bff));
+   background: -webkit-linear-gradient(top, #65747d, #059bff);
+   background: -moz-linear-gradient(top, #65747d, #059bff);
+   background: -ms-linear-gradient(top, #65747d, #059bff);
+   background: -o-linear-gradient(top, #65747d, #059bff);
+   padding: 10.5px 21px;
+   -webkit-border-radius: 16px;
+   -moz-border-radius: 16px;
+   border-radius: 16px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 18px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #0397fa;
+   background: #0397fa;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+.bottom-options {
+  padding-top: 20px;
+  margin-top: 20px;
 }

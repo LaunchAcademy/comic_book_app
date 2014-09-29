@@ -7,9 +7,9 @@
       </ul>
     <% end %>
 </div>
-<div>
+<div class='bottom-options'>
   <ul class='bottom-options'>
-    <li><%= link_to "Add comic", new_comic_book_path, class:'btn btn-default' %></li>
+    <li><%= link_to "Add comic", new_comic_book_path, class:'button add-comic' %></li>
     <li><%= paginate @comic_books %></li>
   </ul>
 </div>
