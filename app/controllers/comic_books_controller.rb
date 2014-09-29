@@ -1,7 +1,6 @@
 class ComicBooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
-
   def index
     @comic_books = ComicBook.page(params[:page]).per(10)
   end
@@ -32,7 +31,7 @@ class ComicBooksController < ApplicationController
 
   def show
     @comic_book = ComicBook.find(params[:id])
-    @ratings = @comic_book.ratings
+    @ratings = @comic_book.ratings.sort_by { |rating| rating.total_score }
   end
 
   def edit
@@ -57,25 +56,25 @@ class ComicBooksController < ApplicationController
     redirect_to comic_books_path
   end
 
-#############
   private
-#############
-
-    # def rating_params
-    #   params.require(:ratings).permit(:body, :rating)
-    # end
 
     def comic_book_params
-      params.require(:comic_book).permit(:title, :issue, :year,
-        :publisher, :author, :artist, :description, :cover)
+      params.require(:comic_book).permit(
+        :title,
+        :issue,
+        :year,
+        :publisher,
+        :author,
+        :artist,
+        :description,
+        :cover
+      )
     end
 
-  def authenticate_user!
-    unless user_signed_in?
-      flash[:notice] = 'You need to sign in if you want to add a comic.'
-      redirect_to new_user_session_path
-    end
-  end # of method
-
-
+    def authenticate_user!
+      unless user_signed_in?
+        flash[:notice] = 'You need to sign in if you want to add a comic.'
+        redirect_to new_user_session_path
+      end
+    end # of method
 end # of class
