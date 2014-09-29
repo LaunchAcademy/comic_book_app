@@ -1,0 +1,26 @@
+<header>
+  <nav class='nav-bar'>
+    <ul>
+      <li class='brand'><%= link_to "Comic Reviews", root_path %></li>
+      <li><%= link_to "Comics", comic_books_path, class: 'comicify' %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Edit profile", edit_user_registration_path(current_user) %></li>
+        <li><%= link_to "Sign out",
+        destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+      <li>
+      <%= form_tag(search_comic_books_path, id: "search-form", method: :get) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search comics", class:'search-box' %>
+      <%= submit_tag "Search", :name => nil, class:'search-btn' %>
+      <% end %>
+      </li>
+    </ul>
+  </nav>
+  <div class='seperator1'>
+  </div>
+  <div class='seperator2'>
+  </div>
+</header>
