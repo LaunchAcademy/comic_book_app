@@ -11,7 +11,11 @@ class ComicBook < ActiveRecord::Base
   end
 
   def average_score
-    ratings.sum(:rating)/ratings.length
-  end
 
-end
+    if ratings.length > 0
+      average = ratings.sum(:rating)/ratings.length
+    else
+      average = "No reviews yet!"
+    end
+  end #end of method
+end # end of class
