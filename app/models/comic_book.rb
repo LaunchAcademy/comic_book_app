@@ -10,4 +10,8 @@ class ComicBook < ActiveRecord::Base
     where("title ilike ?", "%#{query}%")
   end
 
+  def average_score
+    ratings.rating.sum/ratings.length
+  end
+
 end

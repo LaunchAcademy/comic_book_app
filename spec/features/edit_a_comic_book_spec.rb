@@ -27,9 +27,6 @@ feature 'user adds a comic, then tries to edit it. ', %Q(
     fill_in 'Artist', with: comic.artist
     fill_in 'Description', with: comic.description
     click_button 'Create Comic Book'
-
-    binding.pry
-
     click_link 'Edit Comic'
     fill_in 'Title', with: 'test edit'
     click_button 'Update Comic Book'
