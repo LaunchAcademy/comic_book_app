@@ -18,6 +18,17 @@ class RatingsController < ApplicationController
     @comic_book = ComicBook.find(params[:comic_book_id])
   end
 
+  def update
+    @rating = Rating.find(params[:id])
+    @comic_book = ComicBook.find(params[:comic_book_id])
+    if @rating.update(rating_params)
+      redirect_to @comic_book, notice: 'Review Updated!'
+    else
+      flash[:notice] = 'Could not update. Ask Batman. '
+      render :new
+    end
+  end
+
   private
 
   def rating_params
