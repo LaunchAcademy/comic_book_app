@@ -13,6 +13,7 @@ feature 'user can add comic book', %Q(
   scenario 'user adds comic book' do
     sign_in(user)
     comic = FactoryGirl.build(:comic_book)
+    ActionMailer::Base.deliveries = []
 
     visit new_comic_book_path
     fill_in 'Title', with: comic.title
@@ -23,5 +24,7 @@ feature 'user can add comic book', %Q(
     click_button 'Create Comic Book'
 
     expect(page).to have_content("Successfully created!")
+    expect(ActionMailer::Base.deliveries.size).to eql(1)
+    last_email = ActionMailer::Base.deliveries.last
   end
 end
