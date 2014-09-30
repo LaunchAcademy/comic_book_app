@@ -11,7 +11,7 @@ class ComicBook < ActiveRecord::Base
   end
 
   def average_score
-    ratings.rating.sum/ratings.length
+    ratings.sum(:rating)/ratings.length
   end
 
 end

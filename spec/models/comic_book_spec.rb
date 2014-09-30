@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-describe Comic_book do
+describe ComicBook do
 
-  it { should belong_to(:user) }
   it { should have_many(:ratings) }
 
   describe "#average_score" do
