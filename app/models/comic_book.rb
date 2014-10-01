@@ -10,4 +10,11 @@ class ComicBook < ActiveRecord::Base
     where("title ilike ?", "%#{query}%")
   end
 
-end
+  def average_score
+    if ratings.length > 0
+      average = ratings.sum(:rating)/ratings.length
+    else
+      average = "No reviews yet!"
+    end
+  end #end of method
+end # end of class
