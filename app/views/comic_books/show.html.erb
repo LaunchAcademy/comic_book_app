@@ -39,7 +39,10 @@
         <li><%= rating.user.email%>| Votes: <%= rating.total_score %>|<%= rating.body %></li>
         <%= link_to 'Upvote', upvote_comic_book_rating_path(@comic_book, rating)  %>|
         <%= link_to 'Downvote', downvote_comic_book_rating_path(@comic_book, rating)  %>|
-        <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
+        <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>|
+        <% if rating.user = current_user %>
+          <%= link_to 'Delete Rating', comic_book_rating_path(@comic_book, rating), method: :delete %>
+        <% end %>
       <% end %>
     </ul>
   </div>

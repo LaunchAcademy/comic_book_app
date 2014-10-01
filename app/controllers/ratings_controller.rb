@@ -29,6 +29,14 @@ class RatingsController < ApplicationController
     end
   end
 
+  def destroy
+    @rating = Rating.find(params[:id])
+    @comic_book = ComicBook.find(params[:comic_book_id])
+    @rating.destroy
+    flash[:notice] = 'This rating has been removed.'
+    redirect_to @comic_book
+  end
+
   private
 
   def rating_params
