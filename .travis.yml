@@ -2,4 +2,5 @@ language: ruby
 rvm:
   - 2.0.0
 before_script:
+  - cp config/database.example.yml config/database.yml
   - psql -c 'create database comic_book_app_test;' -U postgres
