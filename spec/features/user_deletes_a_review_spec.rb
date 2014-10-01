@@ -10,7 +10,7 @@ feature 'user tries to delete rating', %Q(
   let(:user) { FactoryGirl.create(:user) }
   let(:comic_book) { FactoryGirl.create(:comic_book) }
 
-  scenario 'user edits rating to comic book' do
+  scenario 'user delets a rating' do
       sign_in(user)
 
       visit comic_book_path(comic_book)
