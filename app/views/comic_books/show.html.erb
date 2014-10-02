@@ -25,8 +25,12 @@
       Artist: <%= @comic_book.artist %>
     </p>
     <p id = 'average_score'>
-      Average Score: <%= @comic_book.average_score %>
-
+      Average Score:
+      <% unless @comic_book.average_score.nil? %>
+        <span><%= @comic_book.average_score %></span>
+      <% else %>
+        <span> No reviews yet! </span>
+      <% end %>
     </p>
     <p id='comic-description'>
       <%= @comic_book.description %>

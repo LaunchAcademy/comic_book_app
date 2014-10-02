@@ -31,7 +31,7 @@ class ComicBooksController < ApplicationController
 
   def show
     @comic_book = ComicBook.find(params[:id])
-    @reviews = @comic_book.reviews.sort_by { |review| review.total_score }
+    @reviews = @comic_book.reviews.sort_by { |review| review.total_score }.reverse
   end
 
   def edit
@@ -54,6 +54,31 @@ class ComicBooksController < ApplicationController
     @comic_book.destroy
     flash[:notice] = 'This comic has been removed.'
     redirect_to comic_books_path
+  end
+
+  # def create
+  #   @user = current_user
+  #   @comic_book = ComicBook.find(params[:comic_book_id])
+  #   @rating = @comic_book.ratings.new(rating_params)
+  #   @rating.user_id = @user.id
+
+  #   if @rating.save
+  #     flash[:notice] = 'Review Added'
+  #     redirect_to comic_book_path(@comic_book)
+  #   else
+  #     redirect_to comic_book_path(@comic_book), notice: 'There was an error'
+  #   end
+  # end
+
+  def collection
+    @collection = Collection.find(params[:collection_id])
+    @comic_book = @collection.comic_book.new(comic_book_params)
+
+    if @comic_books.save
+      redirect_to collection_path(@collection), notice: "Comic Successfully Added to Collection"
+    else
+      redirect_to collection_path(@collection), notice: "There was an error."
+    end
   end
 
   private
