@@ -1,15 +1,15 @@
 # require 'rails_helper'
 #
-# feature 'user tries to edit rating', %Q(
+# feature 'user tries to edit review', %Q(
 #
 #   As a CBN
-#   I want to edit a rating I created
+#   I want to edit a review I created
 #   So I change what i wrote.
 #
 # ) do
 #   let(:user) { FactoryGirl.create(:user) }
 #
-#   scenario 'user edits rating to comic book' do
+#   scenario 'user edits review to comic book' do
 #       sign_in(user)
 #       comic = FactoryGirl.build(:comic_book)
 #
@@ -21,10 +21,10 @@
 #       fill_in 'Description', with: comic.description
 #       click_button 'Create Comic Book'
 #       fill_in 'Body', with: 'sample review'
-#       select(3, from: 'Rating')
-#       click_button 'Create Rating'
-#       click_link 'Edit Rating'
-#       select(5, from: 'Rating')
+#       select(3, from: 'review')
+#       click_button 'Create review'
+#       click_link 'Edit review'
+#       select(5, from: 'review')
 #
 #       expect(page).to have_content('Review Updated')
 #   end

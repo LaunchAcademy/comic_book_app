@@ -22,7 +22,7 @@ feature 'user tries to add a review to a comic', %Q(
       click_button 'Create Comic Book'
       fill_in 'Body', with: 'sample review'
       select(5, from: 'Rating')
-      click_button 'Create Rating'
+      click_button 'Create Review'
 
       expect(page).to have_content('Review Added')
   end
