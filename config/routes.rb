@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :reviews, only: [:create, :update, :edit] do
+    resources :reviews, only: [:create, :update, :edit, :destroy] do
       member do
         get 'upvote', to: 'votes#upvote'
         get 'downvote', to: 'votes#downvote'
