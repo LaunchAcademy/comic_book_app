@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Bangers);
+
 @import 'bootstrap';
 * {
   font-family: 'Bangers', cursive;
@@ -23,6 +24,7 @@ body {
   border-bottom: 3px solid #1C88CC;
 }
 /*NAVIGATION BAR*/
+
 header {
   margin: 0 auto;
 }
