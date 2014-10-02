@@ -31,7 +31,7 @@ class ComicBooksController < ApplicationController
 
   def show
     @comic_book = ComicBook.find(params[:id])
-    @reviews = @comic_book.reviews.sort_by { |review| review.total_score }
+    @reviews = @comic_book.reviews.sort_by { |review| review.total_score }.reverse
   end
 
   def edit
