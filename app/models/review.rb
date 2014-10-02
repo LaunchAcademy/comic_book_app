@@ -6,8 +6,8 @@ class Review < ActiveRecord::Base
   has_many :votes
 
   validates :rating, presence: true
-  validates :user_id, presence: true
-  validates :comic_book_id, presence: true
+  validates :user, presence: true
+  validates :comic_book, presence: true
 
   def total_score
     votes.sum(:score)
