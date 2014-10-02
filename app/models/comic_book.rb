@@ -14,7 +14,7 @@ class ComicBook < ActiveRecord::Base
     if reviews.length > 0
       average = reviews.sum(:rating)/reviews.length
     else
-      average = "No reviews yet!"
+      average = nil
     end
   end #end of method
 end # end of class
