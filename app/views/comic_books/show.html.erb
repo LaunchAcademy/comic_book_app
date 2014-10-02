@@ -37,18 +37,18 @@
   </ul>
 </div>
 
-<!-- /Show Ratings/ -->
+<!-- /Show reviews/ -->
 <div class='ratings-panel'>
   <ul>
-    <% @ratings.each do |rating|  %>
-      <li><%= rating.body %></li>
-      <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
+    <% @reviews.each do |review|  %>
+      <li><%= review.body %></li>
+      <%= link_to 'Edit Review', edit_comic_book_review_path(@comic_book, review) %>
     <% end %>
   </ul>
 
-  <!--/Add A Rating & Review Section/-->
+  <!--/Add A review & Review Section/-->
   <h2>Add a Review:</h2>
-  <%= form_for([@comic_book, @comic_book.ratings.build]) do |f| %>
+  <%= form_for([@comic_book, @comic_book.reviews.build]) do |f| %>
     <p>
       <%= f.label :body %><br>
       <%= f.text_area :body %>
