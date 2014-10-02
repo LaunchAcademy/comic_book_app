@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :ratings, only: [:create, :update, :edit, :destroy] do
+    resources :reviews, only: [:create, :update, :edit, :destroy] do
       member do
         get 'upvote'
         get 'downvote'

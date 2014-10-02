@@ -15,7 +15,7 @@ feature 'user tries to delete review', %Q(
 
       visit comic_book_path(comic_book)
       fill_in 'Body', with: 'sample review'
-      select(3, from: 'Review')
+      select(3, from: 'Rating')
       click_button 'Create Review'
       click_link 'Delete Review'
 
