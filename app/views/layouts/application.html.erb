@@ -6,33 +6,15 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-    <nav>
-      <ul>
-        <li><%= link_to "Comic Reviews", root_path %></li>
-        <li><%= link_to "Comics", comic_books_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to "Edit profile", edit_user_registration_path(current_user) %></li>
-          <li><%= link_to "Sign out",
-            destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-        <% end %>
-        <li class='comic-search'>
-          <%= form_tag(search_comic_books_path, id: "search-form", method: :get) do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search comics" %>
-            <%= submit_tag "Search", :name => nil %>
-          <% end %>
-        </li>
-      </ul>
-    </nav>
+  <%= render 'layouts/header' %>
+  <body>
     <div class='main-container'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class='content-container'>
-      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class='content-container'>
+        <%= yield %>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
+  <%= render 'layouts/footer' %>
 </html>

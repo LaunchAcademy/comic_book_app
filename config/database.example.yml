@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: <YOUR_DATABASE_NAME>_development
+  database: comic_book_app_development
 
 test:
   <<: *default
-  database: <YOUR_DATABASE_NAME>_test
+  database: comic_book_app_test
 
 production:
   <<: *default
-  database: <YOUR_DATABASE_NAME>_production
+  database: comic_book_app_production
   username: <USERNAME>
   password: <%= ENV['COMIC_BOOK_APP_DATABASE_PASSWORD'] %>

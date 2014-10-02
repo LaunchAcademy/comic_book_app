@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user tries to downvote a comic rating', %Q(
+feature 'user tries to downvote a comic review', %Q(
 
   As a CBN
-  I want to be able to downvote ratings,
+  I want to be able to downvote reviews,
   so that I can mock lesser nerds and their ignorant reviews.
 
 ) do
@@ -22,9 +22,9 @@ feature 'user tries to downvote a comic rating', %Q(
       click_button 'Create Comic Book'
       fill_in 'Body', with: 'sample review'
       select(5, from: 'Rating')
-      click_button 'Create Rating'
+      click_button 'Create Review'
 
-      ##### rating upvote ######
+      ##### review upvote ######
 
       click_link 'Downvote'
 

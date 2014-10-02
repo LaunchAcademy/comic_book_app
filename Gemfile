@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'fog'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'mailcatcher'
@@ -22,4 +24,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'guard'
-end
+  gem 'dotenv-rails'
+end  

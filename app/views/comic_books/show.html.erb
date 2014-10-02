@@ -24,6 +24,10 @@
     <p>
       Artist: <%= @comic_book.artist %>
     </p>
+    <p id = 'average_score'>
+      Average Score: <%= @comic_book.average_score %>
+
+    </p>
     <p id='comic-description'>
       <%= @comic_book.description %>
     </p>
@@ -35,11 +39,11 @@
     </p>
   <!-- /Show Ratings/ -->
     <ul>
-      <% @ratings.each do |rating|  %>
-        <li><%= rating.user.email%>| Votes: <%= rating.total_score %>|<%= rating.body %></li>
-        <%= link_to 'Upvote', upvote_comic_book_rating_path(@comic_book, rating)  %>|
-        <%= link_to 'Downvote', downvote_comic_book_rating_path(@comic_book, rating)  %>|
-        <%= link_to 'Edit Rating', edit_comic_book_rating_path(@comic_book, rating) %>
+      <% @reviews.each do |review|  %>
+        <li><%= review.user.email%>| Votes: <%= review.total_score %>|<%= review.body %></li>
+        <%= link_to 'Upvote', upvote_comic_book_review_path(@comic_book, review)  %>|
+        <%= link_to 'Downvote', downvote_comic_book_review_path(@comic_book, review)  %>|
+        <%= link_to 'Edit Review', edit_comic_book_review_path(@comic_book, review) %>
       <% end %>
     </ul>
   </div>
@@ -48,7 +52,7 @@
   <div class="row clearfix">
     <div class="col-md-12 column">
       <h2>Add a Review:</h2>
-      <%= form_for([@comic_book, @comic_book.ratings.build]) do |f| %>
+      <%= form_for([@comic_book, @comic_book.reviews.build]) do |f| %>
       <p>
         <%= f.label :body %><br>
         <%= f.text_area :body %>
