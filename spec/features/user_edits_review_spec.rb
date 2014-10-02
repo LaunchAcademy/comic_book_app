@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user tries to edit rating', %Q(
+feature 'user tries to edit review', %Q(
 
   As a CBN
-  I want to edit a rating I created
+  I want to edit a review I created
   So I change what i wrote.
 
 ) do
@@ -11,16 +11,16 @@ feature 'user tries to edit rating', %Q(
   let(:comic_book) { FactoryGirl.create(:comic_book) }
   let(:other_user) { FactoryGirl.create(:user) }
 
-  scenario 'user edits rating to comic book' do
+  scenario 'user edits review to comic book' do
       sign_in(user)
 
       visit comic_book_path(comic_book)
       fill_in 'Body', with: 'sample review'
-      select(3, from: 'Rating')
-      click_button 'Create Rating'
-      click_link 'Edit Rating'
-      select(5, from: 'Rating')
-      click_button 'Update Rating'
+      select(3, from: 'Review')
+      click_button 'Create Review'
+      click_link 'Edit Review'
+      select(5, from: 'Review')
+      click_button 'Update Review'
 
       expect(page).to have_content('Review Updated!')
   end
@@ -30,18 +30,18 @@ feature 'user tries to edit rating', %Q(
 
       visit comic_book_path(comic_book)
       fill_in 'Body', with: 'sample review'
-      select(3, from: 'Rating')
-      click_button 'Create Rating'
-      click_link 'Edit Rating'
-      select(5, from: 'Rating')
-      click_button 'Update Rating'
+      select(3, from: 'Review')
+      click_button 'Create Review'
+      click_link 'Edit Review'
+      select(5, from: 'Review')
+      click_button 'Update Review'
 
       sign_out(user)
       sign_in(other_user)
 
       visit comic_book_path(comic_book)
 
-      expect(page).to have_no_content('Edit Rating')
+      expect(page).to have_no_content('Edit Review')
 
   end
 end # of test

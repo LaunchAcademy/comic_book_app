@@ -19,9 +19,9 @@ class RatingsController < ApplicationController
   end
 
   def update
-    @rating = Rating.find(params[:id])
+    @review = Review.find(params[:id])
     @comic_book = ComicBook.find(params[:comic_book_id])
-    if @rating.update(rating_params)
+    if @review.update(rating_params)
       redirect_to @comic_book, notice: 'Review Updated!'
     else
       flash[:notice] = 'Could not update. Ask Batman. '
@@ -30,10 +30,10 @@ class RatingsController < ApplicationController
   end
 
   def destroy
-    @rating = Rating.find(params[:id])
+    @review = Review.find(params[:id])
     @comic_book = ComicBook.find(params[:comic_book_id])
-    @rating.destroy
-    flash[:notice] = 'This rating has been removed.'
+    @review.destroy
+    flash[:notice] = 'This review has been removed.'
     redirect_to @comic_book
   end
 
