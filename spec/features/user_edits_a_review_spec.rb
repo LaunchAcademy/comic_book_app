@@ -11,7 +11,6 @@ feature 'user tries to edit review', %Q(
   let(:user) { FactoryGirl.create(:user) }
 
   scenario 'user edits review to comic book' do
-  pending 'feature to be implemented'
     review = FactoryGirl.create(:review, user: user)
     sign_in(user)
 

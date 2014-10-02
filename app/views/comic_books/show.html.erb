@@ -47,7 +47,10 @@
         <li><%= review.user.email%>| Votes: <%= review.total_score %>|<%= review.body %></li>
         <%= link_to 'Upvote', upvote_comic_book_review_path(@comic_book, review)  %>|
         <%= link_to 'Downvote', downvote_comic_book_review_path(@comic_book, review)  %>|
-        <%= link_to 'Edit Review', edit_comic_book_review_path(@comic_book, review) %>
+        <% if review.user == current_user %>
+          <%= link_to 'Edit Review', edit_comic_book_review_path(@comic_book, review) %>|
+          <%= link_to 'Delete Review', comic_book_review_path(@comic_book, review), method: :delete %>
+        <% end %>
       <% end %>
     </ul>
   </div>
