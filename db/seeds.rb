@@ -8,6 +8,19 @@
 
 require 'csv'
 
+
+def get_cover_art(the_title, the_issue)
+  comic = @client.comics(title: the_title, issueNumber: the_issue)
+
+  unless comic.nil? || comic.empty?
+    "#{comic[0][:thumbnail][:path]}.jpg"
+  end
+end
+
+# return url_path = "#{comic[0][:thumbnail][:path]}.jpg"
+
+# @client.comics(title: 'Thanos Rising', issueNumber: 1)
+
 comic_books = []
 
 options = { headers: :true, col_sep: "\t" }
@@ -25,5 +38,7 @@ comic_books.each do |comic_attr|
   comic.author = comic_attr["Writer"]
   comic.artist = comic_attr["Cover Artist"]
   comic.description = comic_attr["Plot"]
+  comic.remote_cover_url = get_cover_art(comic.title, comic.issue)
   comic.save!
+  puts "Saved #{comic.title}"
 end
