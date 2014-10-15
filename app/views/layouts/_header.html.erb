@@ -1,7 +1,6 @@
 <header>
   <nav>
     <ul>
-      <li><%= link_to "Comic Reviews", root_path %></li>
       <li><%= link_to "Comics", comic_books_path %></li>
       <% if user_signed_in? %>
         <li><%= link_to "Edit profile", edit_user_registration_path(current_user) %></li>

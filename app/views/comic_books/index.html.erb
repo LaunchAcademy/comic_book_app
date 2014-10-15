@@ -1,10 +1,19 @@
 <h1>COMIC BOOKS</h1>
 
-<ul>
-  <% @comic_books.each do |comic| %>
-    <li class="comic_book"><%= link_to comic.title, comic_book_path(comic) %></li>
-  <% end %>
-</ul>
 
+<% @comic_books.each do |comic| %>
+<ul class='index-covers'>
+  <div class='box-art'>
+    <li><%= link_to comic.title, comic_book_path(comic), class: 'comic-book' %></li>
+      <% if comic.cover.present?  %>
+        <li><%= image_tag comic.cover, class: 'cover-art' %></li>
+      <% else %>
+        <%= image_tag 'nocover.png' %>
+      <% end %>
+  </div>
+</ul>
+  <% end %>
+<div>
 <%= link_to "Add comic", new_comic_book_path %>
 <%= paginate @comic_books %>
+</div>
