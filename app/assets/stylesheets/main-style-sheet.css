@@ -95,17 +95,18 @@ nav li:last-child{
   max-height: 264px;
   border: 2px solid black;
   text-decoration: none;
+  list-style-type: none;
 
 }
 
 .index-covers {
   display: inline-block;
   text-decoration: none;
-
-
+  list-style-type: none;
 }
 
 .box-art {
   text-align: center;
   text-decoration: none;
+  list-style-type: none;
 }
