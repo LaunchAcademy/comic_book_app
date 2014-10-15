@@ -6,7 +6,7 @@
   <div class='box-art'>
     <li><%= link_to comic.title, comic_book_path(comic), class: 'comic-book' %></li>
       <% if comic.cover.present?  %>
-        <li><%= image_tag comic.cover, class: 'cover-art' %></li>
+        <li><%= link_to (image_tag comic.cover, class:'cover-art'),comic_book_path(comic), class: 'cover-art' %></li>
       <% else %>
         <%= image_tag 'nocover.png' %>
       <% end %>
