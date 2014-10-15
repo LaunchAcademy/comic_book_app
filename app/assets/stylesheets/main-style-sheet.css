@@ -7,7 +7,9 @@ body {
 }
 
 
-
+.comic-cover-art {
+  width: 300px
+}
 /*NAV BAR*/
 
 nav {
@@ -88,8 +90,22 @@ nav li:last-child{
 
 /*COMIC BOOK SHOW PAGE*/
 
-.cover-art img{
-  max-width: 250px;
-  max-height: 435px;
+.cover-art {
+  max-width: 175px;
+  max-height: 264px;
   border: 2px solid black;
+  text-decoration: none;
+
+}
+
+.index-covers {
+  display: inline-block;
+  text-decoration: none;
+
+
+}
+
+.box-art {
+  text-align: center;
+  text-decoration: none;
 }

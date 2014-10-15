@@ -10,7 +10,7 @@ require 'csv'
 
 
 def get_cover_art(the_title, the_issue)
-  comic = @client.comics(title: the_title, issueNumber: the_issue)
+  comic = @client.comics(title: the_title.split(',').first, issueNumber: the_issue)
 
   unless comic.nil? || comic.empty?
     "#{comic[0][:thumbnail][:path]}.jpg"
