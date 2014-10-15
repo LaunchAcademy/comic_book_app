@@ -2,7 +2,7 @@ class ComicBooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @comic_books = ComicBook.page(params[:page]).per(10).order(:title)
+    @comic_books = ComicBook.page(params[:page]).per(10).order(:title, :issue)
   end
 
   def search
