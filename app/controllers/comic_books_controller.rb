@@ -56,33 +56,7 @@ class ComicBooksController < ApplicationController
     redirect_to comic_books_path
   end
 
-  # def create
-  #   @user = current_user
-  #   @comic_book = ComicBook.find(params[:comic_book_id])
-  #   @rating = @comic_book.ratings.new(rating_params)
-  #   @rating.user_id = @user.id
-
-  #   if @rating.save
-  #     flash[:notice] = 'Review Added'
-  #     redirect_to comic_book_path(@comic_book)
-  #   else
-  #     redirect_to comic_book_path(@comic_book), notice: 'There was an error'
-  #   end
-  # end
-
-  def collection
-    @collection = Collection.find(params[:collection_id])
-    @comic_book = @collection.comic_book.new(comic_book_params)
-
-    if @comic_books.save
-      redirect_to collection_path(@collection), notice: "Comic Successfully Added to Collection"
-    else
-      redirect_to collection_path(@collection), notice: "There was an error."
-    end
-  end
-
   private
-
     def comic_book_params
       params.require(:comic_book).permit(
         :title,

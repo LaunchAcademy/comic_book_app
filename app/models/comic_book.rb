@@ -1,5 +1,4 @@
 class ComicBook < ActiveRecord::Base
-
   has_many :reviews
 
   validates :title, presence: true
@@ -11,10 +10,7 @@ class ComicBook < ActiveRecord::Base
   end
 
   def average_score
-    if reviews.length > 0
-      average = reviews.sum(:rating)/reviews.length
-    else
-      average = nil
-    end
+    return nil if reviews.length <= 0
+    return reviews.sum(:rating) / reviews.length
   end #end of method
 end # end of class

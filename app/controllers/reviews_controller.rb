@@ -1,16 +1,15 @@
 class ReviewsController < ApplicationController
   def create
-    @user = current_user
     @comic_book = ComicBook.find(params[:comic_book_id])
     @review = @comic_book.reviews.new(review_params)
-    @review.user_id = @user.id
+    @review.user = current_user
 
     if @review.save
       flash[:notice] = 'Review Added'
-      redirect_to comic_book_path(@comic_book)
     else
-      redirect_to comic_book_path(@comic_book), notice: 'There was an error'
+      flash[:notice] = 'There was an error'
     end
+    redirect_to comic_book_path(@comic_book)
   end
 
   def edit

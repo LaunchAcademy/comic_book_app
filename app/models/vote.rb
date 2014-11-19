@@ -2,8 +2,8 @@ class Vote < ActiveRecord::Base
   belongs_to :user
   belongs_to :review
 
-  validates :user_id, presence: true
-  validates :review_id, presence: true
+  validates :user, presence: true
+  validates :review, presence: true
 
   validates_uniqueness_of :review, scope: :user
 
